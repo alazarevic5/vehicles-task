@@ -27,7 +27,7 @@ class ProfileViewController: UIViewController {
     
 
     @IBAction func btnLogoutTapped(_ sender: Any) {
-        let alert = UIAlertController(title: "You leave the user zone", message: "Are you sure you want to log out?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "You are leaving the user zone", message: "Are you sure you want to log out?", preferredStyle: .alert)
         let action1 = UIAlertAction(title: "Log out", style: .destructive) { _ in
             self.performSegue(withIdentifier: "logout", sender: self)
         }
@@ -36,14 +36,5 @@ class ProfileViewController: UIViewController {
         alert.addAction(action2)
         self.present(alert, animated: true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

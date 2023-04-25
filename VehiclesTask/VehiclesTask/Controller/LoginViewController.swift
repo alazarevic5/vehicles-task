@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
                     }
                 } else {
                     DispatchQueue.main.async {
-                        self.showAlert(title: "Error", message: data["description"] as? String ?? "")
+                        SetupData.showAlert(title: "Error", message: data["description"] as? String ?? "", viewController: self)
                         self.activityIndicator.stopAnimating()
                     }
                 }
@@ -58,12 +58,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default)
-        alert.addAction(action)
-        self.present(alert, animated: true)
-    }
+
     func validateFields() -> Bool {
         if self.tfEmail.text?.trimmingCharacters(in: .whitespaces) != "" &&  self.tfPassword.text?.trimmingCharacters(in: .whitespaces) != "" {
             return true
