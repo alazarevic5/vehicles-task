@@ -21,6 +21,7 @@
 		DA3D2F7329F2BA03003A15AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3D2F7129F2BA03003A15AF /* Main.storyboard */; };
 		DA3D2F7529F2BA06003A15AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA3D2F7429F2BA06003A15AF /* Assets.xcassets */; };
 		DA3D2F7829F2BA06003A15AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3D2F7629F2BA06003A15AF /* LaunchScreen.storyboard */; };
+		DAA25CE129F6E37D0008490E /* AddNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA25CE029F6E37C0008490E /* AddNewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		DA3D2F7429F2BA06003A15AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA3D2F7729F2BA06003A15AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA3D2F7929F2BA06003A15AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAA25CE029F6E37C0008490E /* AddNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				DA3D2F6F29F2BA03003A15AF /* LoginViewController.swift */,
 				DA3477B529F6B49000CEF6D7 /* HomeViewController.swift */,
 				DA3477B729F6B4B900CEF6D7 /* ProfileViewController.swift */,
+				DAA25CE029F6E37C0008490E /* AddNewViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAA25CE129F6E37D0008490E /* AddNewViewController.swift in Sources */,
 				DA3D2F7029F2BA03003A15AF /* LoginViewController.swift in Sources */,
 				DA3D2F6C29F2BA03003A15AF /* AppDelegate.swift in Sources */,
 				DA3477AF29F6A02800CEF6D7 /* User.swift in Sources */,

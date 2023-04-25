@@ -9,5 +9,4 @@ import Foundation
 
 struct Vehicle {
     var vin: String
-    
 }

@@ -7,9 +7,18 @@
 
 import UIKit
 
+class VehicleCell: UITableViewCell {
+    
+    @IBOutlet weak var lblVin: UILabel!
+}
+
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var headerview: UIView!
+    
+    var vehicles = [Vehicle]()
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,24 +31,38 @@ class HomeViewController: UIViewController {
         fetchVehicles()
     }
     
+    func fetchVehicles() {
+        Requests.getVehicles { _, res in
+            self.vehicles = res
+            self.tableView.reloadData()
+        }
+    }
+    
     @IBAction func unwindToHome (_ unwindSegue: UIStoryboardSegue) {
         
     }
+
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func fetchVehicles() {
-        Requests.getVehicles { _, _ in
-                
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "vehicleCell") as? VehicleCell {
+            
+            let rowData = vehicles[indexPath.row]
+            cell.lblVin.text = rowData.vin
+            
+            return cell
+        } else {
+            return UITableViewCell()
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return vehicles.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
